@@ -153,7 +153,7 @@ export class SubscriptionService {
           socket.readyState === WebSocket.CLOSING
         ) {
           this.unsubscribe(socket, id);
-          return;
+          continue;
         }
         this.listeners[id].send(JSON.stringify(response));
       } catch (err) {
