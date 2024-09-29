@@ -1,4 +1,4 @@
-import { SkandhaError } from "@byzanlink-bundler/utils/lib";
+import { ByzanlinkBundlerError } from "@byzanlink-bundler/utils/lib";
 import { Encoding } from "../types";
 import { ResponseError } from "../response";
 import { RespStatus, RpcResponseStatusError } from "../interface";
@@ -63,13 +63,13 @@ export type RequestErrorMetadata = {
  * Same error types as RequestError but without metadata.
  * Top level function sendRequest() must rethrow RequestInternalError with metadata
  */
-export class RequestInternalError extends SkandhaError<RequestErrorType> {
+export class RequestInternalError extends ByzanlinkBundlerError<RequestErrorType> {
   constructor(type: RequestErrorType) {
     super(type);
   }
 }
 
-export class RequestError extends SkandhaError<
+export class RequestError extends ByzanlinkBundlerError<
   RequestErrorType & RequestErrorMetadata
 > {
   constructor(type: RequestErrorType, metadata: RequestErrorMetadata) {

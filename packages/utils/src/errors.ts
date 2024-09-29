@@ -1,4 +1,4 @@
-export class SkandhaError<T extends { code: string }> extends Error {
+export class ByzanlinkBundlerError<T extends { code: string }> extends Error {
   type: T;
   constructor(type: T, message?: string) {
     super(message || type.code);

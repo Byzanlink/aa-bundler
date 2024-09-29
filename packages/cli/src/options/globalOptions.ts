@@ -29,12 +29,12 @@ export const defaultNetworksFile = "config.json";
 
 const globalSingleOptions: ICliCommandOptions<IGlobalSingleArgs> = {
   configFile: {
-    description: "Location of the configuration file used by Skandha",
+    description: "Location of the configuration file used by ByzanlinkBundler",
     type: "string",
     default: `${__dirname}/config.json`,
   },
   dataDir: {
-    description: "Location of the data directory used by Skandha",
+    description: "Location of the data directory used by ByzanlinkBundler",
     type: "string",
     default: `${homedir()}/.byzanlink-bundler/db/`,
   },

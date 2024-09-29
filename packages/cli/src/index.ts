@@ -2,9 +2,9 @@
 
 // MUST import first to apply preset from args
 import { YargsError } from "./util";
-import { getSkandhaCli, yarg } from "./cli";
+import { getByzanlinkBundlerCli, yarg } from "./cli";
 
-const bundler = getSkandhaCli();
+const bundler = getByzanlinkBundlerCli();
 
 void bundler
   .fail((msg, err) => {

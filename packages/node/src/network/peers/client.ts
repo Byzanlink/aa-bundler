@@ -1,5 +1,5 @@
 export enum ClientKind {
-  Skandha = "Skandha",
+  ByzanlinkBundler = "ByzanlinkBundler",
   Stackup = "Stackup",
   Infinitism = "Infitinism",
   Voltaire = "Voltaire",
@@ -12,6 +12,6 @@ export function clientFromAgentVersion(agentVersion: string): ClientKind {
     slashIndex >= 0 ? agentVersion.slice(0, slashIndex) : agentVersion;
   const agentLC = agent.toLowerCase();
   if (agentLC === "byzanlink-bundler" || agentLC === "js-libp2p")
-    return ClientKind.Skandha;
+    return ClientKind.ByzanlinkBundler;
   return ClientKind.Unknown;
 }
