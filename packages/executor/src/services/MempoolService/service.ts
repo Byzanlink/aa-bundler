@@ -123,6 +123,7 @@ export class MempoolService {
           MempoolEntryStatus.Reverted,
         ].findIndex((st) => st === status) > -1
       ) {
+        this.logger.info(`UserOp ${MempoolEntryStatus.Reverted} in update Status ${params?.revertReason} ---- ${params?.transaction}`);
         this.eventBus.emit(ExecutorEvent.submittedUserOps, entry);
       }
     }
