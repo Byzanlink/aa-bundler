@@ -22,7 +22,7 @@ export const yarg = yargs(
  * Common factory for running the CLI and running integration tests
  * The CLI must actually be executed in a different script
  */
-export function getSkandhaCli(): yargs.Argv {
+export function getByzanlinkBundlerCli(): yargs.Argv {
   const byzanlinkbundler = yarg
     .parserConfiguration({
       // As of yargs v16.1.0 dot-notation breaks strictOptions()

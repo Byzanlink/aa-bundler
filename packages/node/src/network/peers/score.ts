@@ -193,7 +193,7 @@ export class PeerScore {
     if (newScore > MAX_SCORE) newScore = MAX_SCORE;
     if (newScore < MIN_SCORE) newScore = MIN_SCORE;
 
-    this.setSkandhaScore(newScore);
+    this.setByzanlinkBundlerScore(newScore);
   }
 
   /**
@@ -213,7 +213,7 @@ export class PeerScore {
       this.lastUpdate = nowMs;
       // e^(-ln(2)/HL*t)
       const decayFactor = Math.exp(HALFLIFE_DECAY_MS * sinceLastUpdateMs);
-      this.setSkandhaScore(this.byzanlinkbundlerScore * decayFactor);
+      this.setByzanlinkBundlerScore(this.byzanlinkbundlerScore * decayFactor);
     }
 
     return this.byzanlinkbundlerScore;
@@ -238,7 +238,7 @@ export class PeerScore {
     };
   }
 
-  private setSkandhaScore(newScore: number): void {
+  private setByzanlinkBundlerScore(newScore: number): void {
     this.byzanlinkbundlerScore = newScore;
     this.updateState();
   }

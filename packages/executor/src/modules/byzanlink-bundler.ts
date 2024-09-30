@@ -17,7 +17,7 @@ import { GetNodeAPI, NetworkConfig } from "../interfaces";
 import { Config } from "../config";
 import { MempoolService } from "../services";
 
-// custom features of Skandha
+// custom features of ByzanlinkBundler
 export class ByzanlinkBundler {
   networkConfig: NetworkConfig;
 

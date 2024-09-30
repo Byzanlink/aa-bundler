@@ -34,7 +34,7 @@ export async function nodeHandler(args: IGlobalArgs): Promise<void> {
 
   logger.info("  ___                                            ___  ");
   logger.info(" (o o)                                          (o o) ");
-  logger.info("(  V  ) Skandha - A modular typescript bundler (  V  )");
+  logger.info("(  V  ) Byzanlink Bundler - A modular typescript bundler (  V  )");
   logger.info("--m-m--------------------------------------------m-m--");
 
   logger.info(`Using the configFile from ${params.configFile}`);

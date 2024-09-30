@@ -3,7 +3,7 @@ import { BigNumber, providers } from "ethers";
 import { IDbController, Logger } from "@byzanlink-bundler/types/lib";
 import { chainsWithoutEIP1559 } from "@byzanlink-bundler/params/lib";
 import { PerChainMetrics } from "@byzanlink-bundler/monitoring/lib";
-import { SkandhaVersion } from "@byzanlink-bundler/types/lib/executor";
+import { ByzanlinkBundlerVersion } from "@byzanlink-bundler/types/lib/executor";
 import { Web3, Debug, Eth, ByzanlinkBundler } from "./modules";
 import {
   MempoolService,
@@ -19,7 +19,7 @@ import { Config } from "./config";
 import { BundlingMode, GetNodeAPI, NetworkConfig } from "./interfaces";
 
 export interface ExecutorOptions {
-  version: SkandhaVersion;
+  version: ByzanlinkBundlerVersion;
   chainId: number;
   db: IDbController;
   config: Config;
@@ -34,7 +34,7 @@ export class Executor {
   private logger: Logger;
   private metrics: PerChainMetrics | null;
 
-  public version: SkandhaVersion;
+  public version: ByzanlinkBundlerVersion;
   public chainId: number;
   public config: Config;
   public provider: providers.JsonRpcProvider;

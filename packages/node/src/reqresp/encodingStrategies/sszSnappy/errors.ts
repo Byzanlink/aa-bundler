@@ -1,4 +1,4 @@
-import { SkandhaError } from "@byzanlink-bundler/utils/lib";
+import { ByzanlinkBundlerError } from "@byzanlink-bundler/utils/lib";
 
 export enum SszSnappyErrorCode {
   /** Invalid number of bytes for protobuf varint */
@@ -40,7 +40,7 @@ type SszSnappyErrorType =
   | { code: SszSnappyErrorCode.TOO_MANY_BYTES; sszDataLength: number }
   | { code: SszSnappyErrorCode.SOURCE_ABORTED };
 
-export class SszSnappyError extends SkandhaError<SszSnappyErrorType> {
+export class SszSnappyError extends ByzanlinkBundlerError<SszSnappyErrorType> {
   constructor(type: SszSnappyErrorType) {
     super(type);
   }

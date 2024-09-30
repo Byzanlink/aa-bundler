@@ -1,4 +1,4 @@
-import { SkandhaError } from "@byzanlink-bundler/utils/lib";
+import { ByzanlinkBundlerError } from "@byzanlink-bundler/utils/lib";
 import { RespStatus, RpcResponseStatusError } from "../interface";
 
 type RpcResponseStatusNotSuccess = Exclude<RespStatus, RespStatus.SUCCESS>;
@@ -17,7 +17,7 @@ type RequestErrorType = {
  * Used internally only to signal a response status error. Since the error should never bubble up to the user,
  * the error code and error message does not matter much.
  */
-export class ResponseError extends SkandhaError<RequestErrorType> {
+export class ResponseError extends ByzanlinkBundlerError<RequestErrorType> {
   status: RpcResponseStatusNotSuccess;
   errorMessage: string;
   constructor(status: RpcResponseStatusNotSuccess, errorMessage: string) {

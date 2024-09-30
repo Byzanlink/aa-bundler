@@ -451,7 +451,7 @@ export class BundlingService {
           });
         }
 
-        this.logger.debug("Sent new bundle to Skandha relayer...");
+        this.logger.debug("Sent new bundle to ByzanlinkBundler relayer...");
 
         // during testing against spec-tests we need to wait the block to be submitted
         if (this.config.testingMode) {

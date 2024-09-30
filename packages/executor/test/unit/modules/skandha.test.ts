@@ -3,7 +3,7 @@ import { Wallet } from "ethers";
 import { getClient, getConfigs, getModules } from "../../fixtures";
 import { TestAccountMnemonic } from "../../constants";
 
-describe("Skandha module", async () => {
+describe("ByzanlinkBundler module", async () => {
   const client = await getClient(); // runs anvil
   const wallet = Wallet.fromMnemonic(TestAccountMnemonic).connect(client);
 
@@ -12,18 +12,18 @@ describe("Skandha module", async () => {
 
   it("getGasPrice should return actual onchain gas price", async () => {
     const gasFee = await client.getFeeData();
-    const responseFromSkandha = await byzanlinkbundler.getGasPrice();
-    expect(gasFee.maxFeePerGas).toEqual(responseFromSkandha.maxFeePerGas);
+    const responseFromByzanlinkBundler = await byzanlinkbundler.getGasPrice();
+    expect(gasFee.maxFeePerGas).toEqual(responseFromByzanlinkBundler.maxFeePerGas);
     expect(gasFee.maxPriorityFeePerGas).toEqual(
-      responseFromSkandha.maxPriorityFeePerGas
+      responseFromByzanlinkBundler.maxPriorityFeePerGas
     );
   });
 
   it("getConfig should return all config values and hide sensitive data", async () => {
-    const configSkandha = await byzanlinkbundler.getConfig();
-    expect(configSkandha.flags.redirectRpc).toEqual(config.redirectRpc);
-    expect(configSkandha.flags.testingMode).toEqual(config.testingMode);
-    expect(configSkandha.relayers).toEqual([wallet.address]);
+    const configByzanlinkBundler = await byzanlinkbundler.getConfig();
+    expect(configByzanlinkBundler.flags.redirectRpc).toEqual(config.redirectRpc);
+    expect(configByzanlinkBundler.flags.testingMode).toEqual(config.testingMode);
+    expect(configByzanlinkBundler.relayers).toEqual([wallet.address]);
 
     const sensitiveFields = [
       "relayers",
@@ -36,7 +36,7 @@ describe("Skandha module", async () => {
     ];
     for (const [key, value] of Object.entries(networkConfig)) {
       if (sensitiveFields.indexOf(key) > -1) continue;
-      if (!configSkandha.hasOwnProperty(key)) {
+      if (!configByzanlinkBundler.hasOwnProperty(key)) {
         throw new Error(`${key} is not defined in byzanlink-bundler_config`);
       }
     }

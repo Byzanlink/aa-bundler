@@ -13,7 +13,7 @@ import {
 import { LocalDbController } from "../mocks/database";
 import { ChainId } from "../constants";
 import { logger } from "../mocks/logger";
-import { Skandha } from "../../src/modules";
+import { ByzanlinkBundler } from "../../src/modules";
 
 export async function getServices(
   config: Config,
@@ -43,7 +43,7 @@ export async function getServices(
     logger
   );
 
-  const byzanlinkbundler = new Skandha(
+  const byzanlinkbundler = new ByzanlinkBundler(
     undefined,
     mempoolService,
     ChainId,

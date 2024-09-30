@@ -431,7 +431,7 @@ function fromEnvVar<T>(
   fallback: T,
   isArray = false
 ): T | string | string[] {
-  const envVarName = `SKANDHA_${envVar}`;
+  const envVarName = `ByzanlinkBundler_${envVar}`;
   const envVarOrFallback = getEnvVar(envVarName, fallback);
   if (isArray && typeof envVarOrFallback === "string") {
     return (envVarOrFallback as string)

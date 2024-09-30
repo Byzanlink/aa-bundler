@@ -11,7 +11,7 @@ import { BundlingMode } from "@byzanlink-bundler/types/lib/api/interfaces";
 import { createMetrics, getHttpMetricsServer } from "@byzanlink-bundler/monitoring/lib";
 import { MetricsOptions } from "@byzanlink-bundler/types/lib/options/metrics";
 import { GetNodeAPI } from "@byzanlink-bundler/executor/lib/interfaces";
-import { SkandhaVersion } from "@byzanlink-bundler/types/lib/executor";
+import { ByzanlinkBundlerVersion } from "@byzanlink-bundler/types/lib/executor";
 import { Network } from "./network/network";
 import { SyncService } from "./sync";
 import { IBundlerNodeOptions } from "./options";
@@ -44,7 +44,7 @@ export interface BundlerNodeInitOptions {
   redirectRpc: boolean;
   bundlingMode: BundlingMode;
   metricsOptions: MetricsOptions;
-  version: SkandhaVersion;
+  version: ByzanlinkBundlerVersion;
 }
 
 export class BundlerNode {
